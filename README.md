@@ -21,8 +21,8 @@ This project is a simple backend API built for a dosa restaurant using **FastAPI
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/01lasya/WSD_Final_Project_SI289.git
-cd WSD_Final_Project_SI289
+git clone https://github.com/lasyavarma25/Si289_WSD_Final_Project.git
+cd Si289_WSD_Final_Project
 ```
 
 ### Step 2: Set Up a Virtual Environment
