@@ -23,7 +23,7 @@ class Order(BaseModel):
     customer_id: int
     notes: str
 
-# ---------------- Item Routes ----------------
+# Item Routes
 
 @app.post("/items")
 def create_item(item: Item):
@@ -62,7 +62,7 @@ def delete_item(item_id: int):
         conn.commit()
         return {"message": f"Item {item_id} removed"}
 
-# ---------------- Customer Routes ----------------
+# Customer Routes
 
 @app.post("/customers")
 def add_customer(customer: Customer):
@@ -101,7 +101,7 @@ def remove_customer(customer_id: int):
         conn.commit()
         return {"message": "Customer deleted"}
 
-# ---------------- Order Routes ----------------
+# Order Routes
 
 @app.post("/orders/{order_id}")
 def add_order(order: Order):
@@ -141,7 +141,7 @@ def remove_order(order_id: int):
         conn.commit()
         return {"message": f"Order {order_id} removed"}
 
-# ---------------- Root Redirect ----------------
+# Root Redirect
 
 @app.get("/")
 def docs_redirect():
