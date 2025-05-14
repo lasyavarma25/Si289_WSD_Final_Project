@@ -38,7 +38,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS order_items (
 with open('example_orders.json', 'r') as file:
     data = json.load(file)
 
-# Populate customers table
+# customers table
 for order in data:
     customer_name = order['name']
     phone = order['phone']
@@ -53,10 +53,10 @@ for order in data:
         # Insert new customer
         customer_id = cursor.execute("INSERT INTO customers (name, phone) VALUES (?, ?)", (customer_name, phone)).lastrowid
 
-    # Populate orders table
+    # orders table
     order_id = cursor.execute("INSERT INTO orders (timestamp, customer_id, notes) VALUES (?, ?, ?)", (order['timestamp'], customer_id, order['notes'])).lastrowid
 
-    # Populate items and order_items tables
+    # items and order_items tables
     for item in order['items']:
         item_name = item['name']
         item_price = item['price']
